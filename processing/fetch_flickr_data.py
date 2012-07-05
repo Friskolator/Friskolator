@@ -17,6 +17,9 @@ filter_tags = [stream.event_tag, "friskolator"] # so we don't get general event 
 
 for photo in flickr.walk(tag_mode="and",tags=filter_tags):
     print photo.get('title')
-
-
+    print dir(photo)	
+    id = photo.get('id')
+    info = flickr.get_info(secret.api_key, id)
+    #xmlnode = flickr.photos_getInfo(photo_id=id, format='xmlnode')
+    #etree = flickr.photos_getInfo(photo_id=id)
 

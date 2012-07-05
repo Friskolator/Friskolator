@@ -1,0 +1,4 @@
+processing/secret.py #file to store your secret flicker API key into
+
+processing/virtualenv/*
+processing/*.pyc # compiled python files

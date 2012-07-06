@@ -3,7 +3,7 @@ user_id = "81953314@N02"
 event_tag = "prehope_test"
 
 #data directory
-event_data_dir = '../../Friskolator_data/' + event_tag
+event_data_dir = '../Friskolator_data/' + event_tag
 
 
 #template for a frisk event 

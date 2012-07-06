@@ -19,15 +19,19 @@ for photo in flickr.walk(tag_mode="and",tags=filter_tags):
     print photo.get('title')
     print dir(photo)	
     id = photo.get('id')
+    print id 
     #xmlnode = flickr.photos_getInfo(photo_id=id, format='xmlnode')
     etree = flickr.photos_getInfo(photo_id=id)
     for node in etree.iter():
 	#print node.tag, node.attrib
 	if node.tag == 'note':
-		print node.attrib
+		#print node.attrib
 		id = node.attrib['id']
 		text= node.text
 		x,y = node.attrib['x'], node.attrib['y']
 		w,h = node.attrib['w'], node.attrib['h']
-		print "note %s at %s %s %s %s " % ( text, x, y, w, h)
-
+		#print "note %s at %s %s %s %s " % ( text, x, y, w, h)
+	info = stream.template_frisk.copy()
+	photo_url = "http://www.flickr.com/photos/friskolator/" + id  + "/"	
+	info['img'] = photo_url
+	print info

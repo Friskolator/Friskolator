@@ -1,3 +1,6 @@
+import sys
+
+sys.path.insert(0, ".") #add our parent dir for secret.py and stream.py
 
 import secret # import local secret.py file containing keys.
 	      # we expect 2 values in secret.py 
